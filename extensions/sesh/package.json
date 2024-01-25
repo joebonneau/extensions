@@ -28,6 +28,24 @@
           "default": "Terminal"
         }
       ]
+    },
+    {
+      "name": "cmd-create",
+      "title": "Create Connect Quicklink",
+      "subtitle": "Sesh",
+      "description": "Smart terminal session manager.",
+      "icon": "command-icon.png",
+      "mode": "view",
+      "preferences": [
+        {
+          "name": "openWithApp",
+          "type": "appPicker",
+          "required": true,
+          "title": "Open with (required)",
+          "description": "Open with",
+          "default": "Terminal"
+        }
+      ]
     }
   ],
   "dependencies": {
