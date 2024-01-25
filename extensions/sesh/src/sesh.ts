@@ -13,8 +13,8 @@ export function getSessions(args?: string) {
   });
 }
 
-export function connectToSession(session: string, args?: string): Promise<void> {
-  const cmd = `sesh connect --switch ${args ? args : ""} ${session}`;
+export function connectToSession(session: string, args: string): Promise<void> {
+  const cmd = `sesh connect --switch ${args} ${session}`;
   return new Promise<void>((resolve, reject) => {
     exec(cmd, { env }, (error, _, stderr) => {
       if (error || stderr) {
@@ -26,15 +26,3 @@ export function connectToSession(session: string, args?: string): Promise<void> 
     });
   });
 }
-
-// export function getZoxideResults() {
-//   return new Promise<string[]>((resolve, reject) => {
-//     exec("sesh list --zoxide", { env }, (error, stdout, stderr) => {
-//       if (error || stderr) {
-//         return reject(error?.message ?? stderr);
-//       }
-//       const sessions = stdout.trim().split("\n");
-//       return resolve(sessions ?? []);
-//     )};
-//   });
-// }

@@ -5,7 +5,7 @@ import { getSessions, connectToSession } from "./sesh";
 import { openApp } from "./app";
 
 type Arguments = {
-  args?: string;
+  args: string;
   session?: string;
 };
 type Props = {
@@ -65,7 +65,7 @@ export default function ConnectCommand(props: Props): React.JSX.Element {
   async function connect(session: string) {
     try {
       setIsLoading(true);
-      await connectToSession(session);
+      await connectToSession(session, "");
       await openApp();
       await closeMainWindow();
       await clearSearchBar();
